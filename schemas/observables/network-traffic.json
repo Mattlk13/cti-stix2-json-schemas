@@ -78,6 +78,7 @@
           "description": "Specifies the number of packets sent destination to the source."
         },
         "ipfix": {
+          "description": "Specifies any IP Flow Information Export (IPFIX) data for the traffic.",
           "allOf": [{ "$ref": "../common/dictionary.json" }],
           "patternProperties": {
             "^[a-zA-Z0-9_-]{0,250}$": {
@@ -264,7 +265,7 @@
               "allOf": [{ "$ref": "../common/dictionary.json" }],
               "description": "Specifies any options (SO_*) that may be used by the socket, as a dictionary.",
               "patternProperties": {
-                "^(SO|ICMP|ICMP6|IP|IPV6|MCAST|TCP|IRLMP)_[A-Z]*$": {
+                "^(SO|ICMP|ICMP6|IP|IPV6|MCAST|TCP|IRLMP)(_[A-Z]+)+$": {
                   "type": "integer"
                 }
               },

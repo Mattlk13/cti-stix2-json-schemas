@@ -46,6 +46,9 @@
                 "$ref": "../sdos/indicator.json"
               },
               {
+                "$ref": "../sdos/infrastructure.json"
+              },
+              {
                 "$ref": "../sdos/intrusion-set.json"
               },
               {
@@ -137,7 +140,14 @@
           {
             "allOf": [
               {
-                "$ref": "../common/core.json"
+                "oneOf": [
+                  {
+                    "$ref": "../common/core.json"
+                  },
+                  {
+                    "$ref": "../common/cyber-observable-core.json"
+                  }
+                ]
               },
               {
                 "properties": {
@@ -151,6 +161,7 @@
                         "course-of-action",
                         "identity",
                         "indicator",
+                        "infrastructure",
                         "intrusion-set",
                         "malware",
                         "observed-data",
